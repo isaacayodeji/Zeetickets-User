@@ -33,7 +33,7 @@ const SingleEvent: React.FC = () => {
       {isFetching ? (
         <Loader />
       ) : (
-        <Card className="xl:w-[40%] lg:w-[50%] relative">
+        <Card className="xl:w-[40%] lg:w-[50%] w-[100%] relative">
           <MdOutlineCancel
             size={25}
             onClick={() => window.location.replace(routerPath.Events)}
