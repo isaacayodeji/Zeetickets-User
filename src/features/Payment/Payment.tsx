@@ -12,7 +12,7 @@ const Payment: React.FC = () => {
 
   return (
     <div className="flex justify-center py-16">
-      <Card className="w-[50%]">
+      <Card className="lg:w-[50%] w-[100%]">
         <header className="pb-4">
           <Typography className="font-semibold">PAYMENT DETAILS</Typography>
           <Divider />
@@ -32,7 +32,7 @@ const Payment: React.FC = () => {
           <Typography>₦ {formattedAmount(totalAmount) ?? "N/A"}</Typography>
         </div>
         <Divider />
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between gap-2 items-center">
           <h2>Payment Method :</h2>
           <Select
             defaultValue="Paystack"

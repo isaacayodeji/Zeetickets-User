@@ -32,7 +32,7 @@ const SingleEvent: React.FC = () => {
       {isFetching ? (
         "Loading ..."
       ) : (
-        <Card className="w-[50%] relative">
+        <Card className="xl:w-[40%] lg:w-[50%] relative">
           <MdOutlineCancel
             size={25}
             onClick={() => window.location.replace(routerPath.Events)}
@@ -40,17 +40,21 @@ const SingleEvent: React.FC = () => {
           />
           <div className="space-y-3">
             <img className="w-[100%]" src={eventData?.image} />
-            <h2 className="text-3xl font-inter-bold">{eventData?.title}</h2>
-            <div className="flex justify-between text-2xl text-gray-text">
+            <h2 className="lg:text-3xl text-xl font-inter-bold">
+              {eventData?.title}
+            </h2>
+            <div className="flex justify-between lg:text-2xl text-gray-text">
               <h2>{eventData?.category}</h2>
-              <h2>₦{formattedAmount(eventData?.price)}</h2>
+              <h2>₦ {formattedAmount(eventData?.price)}</h2>
             </div>
 
-            <h2 className="text-xl">
+            <h2 className="lg:text-xl text-lg">
               <b>About the Event</b> : {eventData?.description}
             </h2>
             <div>
-              <h1 className="text-xl font-inter-semibold">What to expect :</h1>
+              <h1 className="lg:text-xl text-lg font-inter-semibold">
+                What to expect :
+              </h1>
               <ul
                 className="px-4 font-semibold"
                 style={{ listStyle: "outside" }}
@@ -63,8 +67,8 @@ const SingleEvent: React.FC = () => {
               </ul>
             </div>
           </div>
-          <div className="pt-4 flex justify-between items-center">
-            <h2 className="text-2xl">
+          <div className="pt-4 flex flex-col gap-4 lg:flex-row justify-between items-center">
+            <h2 className="lg:text-xl">
               {onFormattedDateTime(eventData?.eventDate)}
             </h2>
             <Button onClick={() => buyTicketClick()} type="primary">

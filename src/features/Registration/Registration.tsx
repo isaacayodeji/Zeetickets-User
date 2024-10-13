@@ -1,4 +1,4 @@
-import { Button, Form, Input } from "antd";
+import { Form, Input, Select } from "antd";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { appTitle, formConfig } from "../../utils/helper";
 import { usePostDataMutation } from "../../store/api/api.Config";
@@ -8,6 +8,7 @@ import useToast from "../../components/useToast";
 import { setLayoutState } from "../../store/slices/layoutSlice";
 import { AppPayload } from "../../Models/application/payload";
 import { useCallback } from "react";
+import SubmitButton from "../../components/SubmitButton";
 
 const Registration: React.FC = () => {
   const [postData, response] = usePostDataMutation();
@@ -45,13 +46,16 @@ const Registration: React.FC = () => {
     }
   }, [dispatch, form, onNotify, postData, state.response?._id]);
 
+  const { Option } = Select;
+  const quantities = Array.from({ length: 10 }, (_, i) => i + 1); // [1, 2, 3, ..., 10]
+
   return (
-    <div className="flex items-center justify-center pt-10">
+    <div className="flex items-center justify-center pt-10 ">
       <Form
         form={form}
         {...formConfig}
         onFinish={onFinish}
-        className=" w-[40%] "
+        className="xl:w-[30%] lg:w-[40%] w-[100%]"
         initialValues={state.request}
       >
         <Form.Item
@@ -62,25 +66,25 @@ const Registration: React.FC = () => {
             { type: "email", message: "Please enter a valid email address" },
           ]}
         >
-          <Input type="email" />
+          <Input type="email" placeholder="example@gmail.com" />
         </Form.Item>
 
         <Form.Item
           label="Quality"
           name="quantity"
-          rules={[{ required: true, message: "Quality is required" }]}
+          rules={[{ required: true, message: "Please select a quantity!" }]}
         >
-          <Input type="number" />
+          <Select placeholder="Select quantity">
+            {quantities.map((quantity) => (
+              <Option key={quantity} value={quantity}>
+                {quantity}
+              </Option>
+            ))}
+          </Select>
         </Form.Item>
-
-        <Button
-          htmlType="submit"
-          loading={response.isLoading}
-          block
-          type="primary"
-        >
+        <SubmitButton block form={form} loading={response.isLoading}>
           Proceed
-        </Button>
+        </SubmitButton>
       </Form>
     </div>
   );

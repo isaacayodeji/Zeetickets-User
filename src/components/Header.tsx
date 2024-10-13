@@ -1,13 +1,12 @@
 import { Typography } from "antd";
 import { useTheme } from "./ThemeProviderComponent";
 import { SunOutlined, MoonOutlined } from "@ant-design/icons";
-import partyingImage from "../assets/images/smirnoff_logo.webp"
 
 const Header: React.FC = () => {
   const { themeMode, toggleTheme } = useTheme();
 
   return (
-    <nav className="  mx-4 pt-4 ">
+    <nav className="mx-4 pt-4 border-[#F1F1F1] dark:border-b-[#1F1F1F] dark:bg-primary-dark ">
       <div className="flex justify-between items-center pt-2 pb-2">
         <Typography className="font-inter-bold text-xl">Zeetickets</Typography>
         <button onClick={toggleTheme}>
@@ -18,7 +17,6 @@ const Header: React.FC = () => {
           )}
         </button>
       </div>
-      <img className="h-[200px] w-[100%] object-" src={partyingImage} alt="" />
     </nav>
   );
 };

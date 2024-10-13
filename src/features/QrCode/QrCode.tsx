@@ -26,7 +26,7 @@ const QrCode: React.FC = () => {
       open={window.location.href.includes("reference") && state?.showModal}
       isPadded
       closable
-      modalTitle="Scan to validate ticket"
+      modalTitle="SCAN TO VALIDATE TICKET"
       modalWith="22rem"
       onCancel={() => closeModal()}
       centered

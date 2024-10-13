@@ -88,7 +88,7 @@ const Events: React.FC = () => {
                       </div>
                     }
                   />
-                  <h2 className="pt-2">{item?.description}</h2>
+                  <h2 className="pt-2">{item?.description.toUpperCase()}</h2>
                   <div className="pt-3">
                     <Button
                       onClick={() => buyTicketClick(item)}

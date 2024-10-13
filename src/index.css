@@ -81,3 +81,29 @@ body {
 .dark ::-webkit-scrollbar-thumb:hover {
   background: #777777;
 }
+.ant-progress {
+  margin-top: -13px !important;
+}
+.ant-progress-outer,
+.ant-progress-inner,
+.ant-progress-bg-outer {
+  border-radius: 0px !important;
+  height: 5px!important;
+}
+
+.ant-input-outlined:focus,
+.ant-input-outlined:focus-within{
+  box-shadow: none !important;
+}
+
+.ant-input-group-wrapper-outlined .ant-input-group-addon:first-child {
+  background-color: #e8e8e8 !important;
+}
+
+.dark .ant-input-group-wrapper-outlined .ant-input-group-addon:first-child {
+  background-color: #1f1f1f !important;
+}
+
+.ant-table-thead tr > th {
+  padding: 0.8rem !important;
+}

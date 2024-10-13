@@ -4,9 +4,9 @@ import { Outlet } from "react-router-dom";
 
 const Layout: React.FC = () => {
   return (
-    <div className="min-h-screen h-screen w-[100%] grid grid-rows-[16rem_1fr_auto] bg-[#FAFAFA] ">
+    <div className="min-h-screen h-screen w-[100%] grid grid-rows-[5rem_1fr_auto] bg-[#FAFAFA] dark:bg-[#121212]">
       <Header />
-      <section>
+      <section className="overflow-auto">
         <Outlet />
       </section>
       <Footer />

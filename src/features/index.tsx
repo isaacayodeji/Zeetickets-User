@@ -4,6 +4,7 @@ import Registration from "./Registration/Registration";
 import Payment from "./Payment/Payment";
 import { Steps } from "antd";
 import { useAppSelector } from "../store/hooks";
+import partyingImage from "../assets/images/smirnoff_logo.webp";
 
 const PageComponents: React.FC = () => {
   const state = useAppSelector((state) => state.layout);
@@ -16,7 +17,7 @@ const PageComponents: React.FC = () => {
     },
     {
       status: "process",
-      title: "Events Details",
+      title: "Event Details",
       content: <SingleEvent />,
     },
     {
@@ -31,7 +32,7 @@ const PageComponents: React.FC = () => {
     },
   ];
 
-//   const url = window.location.href;
+  //   const url = window.location.href;
 
   //   useEffect(() => {
   //     switch (true) {
@@ -53,16 +54,18 @@ const PageComponents: React.FC = () => {
   const items = steps.map((item) => ({ key: item.title, title: item.title }));
 
   return (
-    <div className="px-6 py-5 ">
-      <>
-        <Steps
-          type="default"
-          current={state.current}
-          items={items}
-          responsive={true}
-        />
-        <div>{steps[state.current > 4 ? 0 : state.current].content}</div>
-      </>
+    <div className="px-6 py-5">
+      <div className="pb-6">
+        <img className="h-[200px] w-[100%] " src={partyingImage} alt="" />
+      </div>
+
+      <Steps
+        type="default"
+        current={state.current}
+        items={items}
+        responsive={true}
+      />
+      <div>{steps[state.current > 4 ? 0 : state.current].content}</div>
     </div>
   );
 };
