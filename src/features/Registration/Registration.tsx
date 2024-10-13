@@ -44,8 +44,7 @@ const Registration: React.FC = () => {
     } catch (error: any) {
       onNotify("error", error.message || "An error just occurred");
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [dispatch, form, onNotify, postData, state.response?._id]);
+  }, [callBackUrl, dispatch, form, onNotify, postData, state.response?._id]);
 
   const { Option } = Select;
   const quantities = Array.from({ length: 10 }, (_, i) => i + 1); // [1, 2, 3, ..., 10]
