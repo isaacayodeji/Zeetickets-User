@@ -91,8 +91,9 @@ const Events: React.FC = () => {
                       onClick={() => buyTicketClick(item)}
                       block
                       type="primary"
+                      disabled={item.slots === 0 ? true : false}
                     >
-                      Buy Ticket
+                      {item.slots === 0 ? "Sold Out" : "Buy Ticket"}
                     </Button>
                   </div>
                 </Card>
