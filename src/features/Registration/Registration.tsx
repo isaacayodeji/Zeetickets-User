@@ -16,7 +16,6 @@ const Registration: React.FC = () => {
   const state = useAppSelector((state) => state.layout);
   const onNotify = useToast();
   const dispatch = useAppDispatch();
-  console.log(state);
   const [form] = Form.useForm();
 
   const onFinish = useCallback(async () => {

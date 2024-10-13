@@ -8,7 +8,6 @@ import partyingImage from "../assets/images/smirnoff_logo.webp";
 
 const PageComponents: React.FC = () => {
   const state = useAppSelector((state) => state.layout);
-  console.log(state.current);
   const steps = [
     {
       status: "process",

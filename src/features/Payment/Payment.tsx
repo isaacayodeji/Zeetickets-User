@@ -6,7 +6,6 @@ import useAmountFormatter from "../../customHooks/useAmountFormatter";
 const Payment: React.FC = () => {
   document.title = `Payment${appTitle}`;
   const state = useAppSelector((state) => state.layout);
-  console.log(state);
   const { formattedAmount } = useAmountFormatter();
   const totalAmount = state.record?.totalAmount * state.record?.quantity;
 

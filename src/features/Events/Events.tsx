@@ -33,7 +33,6 @@ const Events: React.FC = () => {
   );
   const searchParams = new URLSearchParams(window.location.search);
   const transRef = searchParams.get("reference");
-  console.log(transRef);
 
   useEffect(() => {
     if (window.location.href.includes("reference")) {

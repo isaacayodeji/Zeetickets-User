@@ -8,7 +8,6 @@ import { useNavigate } from "react-router-dom";
 const QrCode: React.FC = () => {
   const searchParams = new URLSearchParams(window.location.search);
   const transRef = searchParams.get("reference");
-  console.log(transRef);
   const state = useAppSelector((state) => state.layout);
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
