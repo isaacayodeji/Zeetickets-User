@@ -3,11 +3,14 @@ import { router } from "./utils/router";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import { Suspense } from "react";
+import { Typography } from "antd";
 
 const App = () => {
   return (
     <Suspense
-      fallback={<div className="dark:bg-primary-dark">Loading ...</div>}
+      fallback={
+        <Typography className="dark:bg-primary-dark">Loading ...</Typography>
+      }
     >
       <RouterProvider router={router} />
       <ToastContainer />
