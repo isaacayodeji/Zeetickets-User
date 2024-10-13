@@ -11,6 +11,7 @@ import { setLayoutState } from "../../store/slices/layoutSlice";
 import { AppPayload } from "../../Models/application/payload";
 import { MdOutlineCancel } from "react-icons/md";
 import { useDispatch } from "react-redux";
+import Loader from "../../components/Loader";
 
 const SingleEvent: React.FC = () => {
   const state = useAppSelector((state) => state.layout);
@@ -30,7 +31,7 @@ const SingleEvent: React.FC = () => {
   return (
     <div className="flex items-center justify-center mx-auto py-8">
       {isFetching ? (
-        "Loading ..."
+        <Loader />
       ) : (
         <Card className="xl:w-[40%] lg:w-[50%] relative">
           <MdOutlineCancel

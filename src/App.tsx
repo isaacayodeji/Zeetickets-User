@@ -3,13 +3,13 @@ import { router } from "./utils/router";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import { Suspense } from "react";
-import { Typography } from "antd";
+import Loader from "./components/Loader";
 
 const App = () => {
   return (
     <Suspense
       fallback={
-        <Typography className="dark:bg-primary-dark">Loading ...</Typography>
+        <Loader />
       }
     >
       <RouterProvider router={router} />

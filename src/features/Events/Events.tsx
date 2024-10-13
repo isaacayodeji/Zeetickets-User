@@ -10,6 +10,7 @@ import { setLayoutState } from "../../store/slices/layoutSlice";
 import { useCallback, useEffect, useState } from "react";
 import { AppPayload } from "../../Models/application/payload";
 import QrCode from "../QrCode/QrCode";
+import Loader from "../../components/Loader";
 
 const Events: React.FC = () => {
   const state = useAppSelector((state) => state.layout);
@@ -58,7 +59,7 @@ const Events: React.FC = () => {
       {state.showModal && <QrCode />}
 
       {isFetching ? (
-        "Loading ...."
+        <Loader />
       ) : (
         <div className="className=flex items-center justify-center  py-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">
