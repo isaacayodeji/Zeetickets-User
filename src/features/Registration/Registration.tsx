@@ -18,7 +18,7 @@ const Registration: React.FC = () => {
   const dispatch = useAppDispatch();
   const [form] = Form.useForm();
   const callBackUrl = window.location.href;
-
+  
   const onFinish = useCallback(async () => {
     const request = await form.validateFields();
     const data = await postData({
