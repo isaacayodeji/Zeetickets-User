@@ -17,6 +17,7 @@ const Registration: React.FC = () => {
   const onNotify = useToast();
   const dispatch = useAppDispatch();
   const [form] = Form.useForm();
+  const callBackUrl = window.location.href;
 
   const onFinish = useCallback(async () => {
     const request = await form.validateFields();
@@ -25,7 +26,7 @@ const Registration: React.FC = () => {
       request: {
         email: request?.email,
         quantity: request?.quantity,
-        callbackUrl: "http://localhost:9921",
+        callbackUrl: callBackUrl,
       },
     });
     try {

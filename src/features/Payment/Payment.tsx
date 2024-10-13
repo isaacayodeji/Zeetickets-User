@@ -11,7 +11,7 @@ const Payment: React.FC = () => {
 
   return (
     <div className="flex justify-center py-16">
-      <Card className="lg:w-[50%] w-[100%]">
+      <Card className="lg:w-[50%] xl:w-[40%] w-[100%]">
         <header className="pb-4">
           <Typography className="font-semibold">PAYMENT DETAILS</Typography>
           <Divider />
