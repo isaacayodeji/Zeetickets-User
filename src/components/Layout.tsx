@@ -3,7 +3,7 @@ import Footer from "./Footer";
 import { Outlet } from "react-router-dom";
 import { useEffect, useState } from "react";
 import useToast from "./useToast";
-import { Button, Result } from "antd";
+import { Result } from "antd";
 
 const Layout: React.FC = () => {
   const onNotify = useToast();
@@ -45,17 +45,6 @@ const Layout: React.FC = () => {
             <Result
               status="warning"
               title="You are offline. Please check your internet connection."
-              extra={
-                <Button
-                  onClick={() => {
-                    window.location.reload();
-                  }}
-                  type="primary"
-                  key="console"
-                >
-                  Refresh
-                </Button>
-              }
             />
           </div>
         ) : (
