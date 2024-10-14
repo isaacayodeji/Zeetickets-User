@@ -1,4 +1,4 @@
-import { Form, Input, Select } from "antd";
+import { Button, Form, Input, Select } from "antd";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { appTitle, formConfig } from "../../utils/helper";
 import { usePostDataMutation } from "../../store/api/api.Config";
@@ -9,6 +9,7 @@ import { setLayoutState } from "../../store/slices/layoutSlice";
 import { AppPayload } from "../../Models/application/payload";
 import { useCallback } from "react";
 import SubmitButton from "../../components/SubmitButton";
+import { BiArrowBack } from "react-icons/bi";
 
 const Registration: React.FC = () => {
   const [postData, response] = usePostDataMutation();
@@ -46,6 +47,9 @@ const Registration: React.FC = () => {
     }
   }, [callBackUrl, dispatch, form, onNotify, postData, state.response?._id]);
 
+  const handleBack = useCallback(() => {
+    dispatch(setLayoutState(new AppPayload("current", 1)));
+  }, [dispatch]);
   const { Option } = Select;
   const quantities = Array.from({ length: 10 }, (_, i) => i + 1); // [1, 2, 3, ..., 10]
 
@@ -82,9 +86,19 @@ const Registration: React.FC = () => {
             ))}
           </Select>
         </Form.Item>
-        <SubmitButton block form={form} loading={response.isLoading}>
-          Proceed
-        </SubmitButton>
+        <div className="flex justify-between gap-6">
+          <Button
+            onClick={() => handleBack()}
+            icon={<BiArrowBack />}
+            block
+            className=""
+          >
+            Previous
+          </Button>
+          <SubmitButton block form={form} loading={response.isLoading}>
+            Proceed
+          </SubmitButton>
+        </div>
       </Form>
     </div>
   );

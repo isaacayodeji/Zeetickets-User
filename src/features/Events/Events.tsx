@@ -67,7 +67,7 @@ const Events: React.FC = () => {
               return (
                 <Card
                   key={index}
-                  className="w-[80%] hover:shadow-lg"
+                  className="lg:w-[80%] hover:shadow-lg w-full"
                   cover={
                     <Image
                       src={item?.image}
