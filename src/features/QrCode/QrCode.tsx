@@ -13,12 +13,14 @@ const QrCode: React.FC = () => {
   const dispatch = useAppDispatch();
   const url = window.location.href;
   const baseUrl = url.split("?")[0];
+  const qrValue = transRef as string;
   const closeModal = () => {
     {
       dispatch(setLayoutState(new AppPayload("showModal", false)));
       navigate((window.location.href = baseUrl));
     }
   };
+console.log(qrValue);
 
   return (
     <PageModal
@@ -32,7 +34,7 @@ const QrCode: React.FC = () => {
       modalFooter={false}
     >
       <Space className="flex justify-center">
-        <QRCode type="canvas" value={window.location.href + transRef} />
+        <QRCode type="canvas" value={qrValue} />
       </Space>
     </PageModal>
   );
